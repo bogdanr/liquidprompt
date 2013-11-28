@@ -86,7 +86,7 @@ See the DEPENDENCIES section for what you need.
 Follow these steps:
 
 `cd ~/`
-`git clone https://github.com/nojhan/liquidprompt.git`
+`git clone git@github.com:bogdanr/liquidprompt.git`
 `source liquidprompt/liquidprompt`
 
 To use it everytime you start a shell add the following line to your
@@ -336,3 +336,9 @@ limitation of the Subversion versionning model.
 * The analog clock necessitate a unicode-aware terminal and a sufficiently
 complete font.
 
+
+## FASTER ALTERNATIVE
+
+A fork of liquidprompt called solidprompt can also be found in this repo. It's purpose is to be a lighter weight alternative
+which has better half of the features. In order to test it just do `source liquidprompt/solidprompt`. For configuring just
+edit the variables in the file with your favorite editor. We don't really need a config file for the prompt :)
