@@ -60,15 +60,15 @@ LP_ENABLE_SHORTEN_PATH=1
 LP_ENABLE_PROXY=1
 
 # Do you want to use the jobs feature ?
-# Recommended value is 1
-LP_ENABLE_JOBS=1
+# Set to 0 in order to improve speed
+LP_ENABLE_JOBS=0
 
 # Do you want to use the load feature ?
-# Recommended value is 1
-LP_ENABLE_LOAD=1
+# Set to 0 in order to improve speed
+LP_ENABLE_LOAD=0
 
 # Do you want to use the batt feature ?
-# Recommended value is 1
+# Set to 0 in order to improve speed
 LP_ENABLE_BATT=1
 
 # Do you want to use the git special features ?
@@ -100,7 +100,8 @@ LP_ENABLE_TIME=0
 LP_ENABLE_VIRTUALENV=1
 
 # Show average system temperature
-LP_ENABLE_TEMP=1
+# Set to 0 in order to improve speed
+LP_ENABLE_TEMP=0
 
 # When showing time, use an analog clock instead of numeric values.
 # The analog clock is "accurate" to the nearest half hour.

@@ -48,15 +48,8 @@
 
 # See the README.md file for a summary of features.
 
-# Check for recent enough version of bash.
+# Check for BASH or ZSH
 if test -n "$BASH_VERSION" -a -n "$PS1" -a -n "$TERM" ; then
-    bash=${BASH_VERSION%.*}; bmajor=${bash%.*}; bminor=${bash#*.}
-    if [[ $bmajor -lt 3 ]] || [[ $bmajor -eq 3 && $bminor -lt 2 ]]; then
-        unset bash bmajor bminor
-        return
-    fi
-    unset bash bmajor bminor
-
     _LP_SHELL_bash=true
     _LP_SHELL_zsh=false
     _LP_OPEN_ESC="\["
@@ -217,9 +210,9 @@ _lp_source_config()
     LP_ENABLE_PERM=${LP_ENABLE_PERM:-1}
     LP_ENABLE_SHORTEN_PATH=${LP_ENABLE_SHORTEN_PATH:-1}
     LP_ENABLE_PROXY=${LP_ENABLE_PROXY:-1}
-    LP_ENABLE_TEMP=${LP_ENABLE_TEMP:-1}
-    LP_ENABLE_JOBS=${LP_ENABLE_JOBS:-1}
-    LP_ENABLE_LOAD=${LP_ENABLE_LOAD:-1}
+    LP_ENABLE_TEMP=${LP_ENABLE_TEMP:-0}
+    LP_ENABLE_JOBS=${LP_ENABLE_JOBS:-0}
+    LP_ENABLE_LOAD=${LP_ENABLE_LOAD:-0}
     LP_ENABLE_BATT=${LP_ENABLE_BATT:-1}
     LP_ENABLE_GIT=${LP_ENABLE_GIT:-1}
     LP_ENABLE_SVN=${LP_ENABLE_SVN:-1}
