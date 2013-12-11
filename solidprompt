@@ -628,6 +628,7 @@ _lp_svn_branch_color()
 # returns 4 if no battery support
 _lp_battery()
 {
+    [[ ! -f /sys/class/power_supply/BAT0/uevent ]] && return
     [[ "$LP_ENABLE_BATT" != 1 ]] && return
     local acpi
     acpi=(`cat /sys/class/power_supply/BAT0/uevent`)
@@ -924,12 +925,6 @@ _lp_set_prompt()
         # end of the prompt line: double spaces
         LP_MARK=$(_lp_sb "$(_lp_smart_mark $LP_VCS_TYPE)")
 
-        # Different path color if root
-        if [[ "$EUID" -ne "0" ]] ; then
-            LP_PWD="${LP_COLOR_PATH}${LP_PWD}${NO_COL}"
-        else
-            LP_PWD="${LP_COLOR_PATH_ROOT}${LP_PWD}${NO_COL}"
-        fi
         LP_OLD_PWD="$PWD"
 
     # if do not change of working directory but...
